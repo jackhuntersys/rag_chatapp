@@ -65,11 +65,8 @@ st.title("Smart FAQ Chatbot")
 
 
 load_dotenv()
-
-if "GROQ_API_KEY" in st.secrets:
-    groq_api_key = st.secrets["GROQ_API_KEY"]
-else:
-    groq_api_key = os.getenv("GROQ_API_KEY")
+# groq_api_key = os.getenv("GROQ_API_KEY")
+groq_api_key = st.secrets["GROQ_API_KEY"]
 
 if not groq_api_key:
     st.error("GROQ_API_KEY not found.")
@@ -93,7 +90,7 @@ if "chat_history" not in st.session_state:
 if "llm" not in st.session_state:
     st.session_state.llm = ChatGroq(
         api_key=groq_api_key,
-        model="openai/gpt-oss-120b",
+        model="deepseek-r1-distill-llama-70b",
         temperature=0.7
     )    
 
@@ -199,10 +196,7 @@ class DocLoader:
             self.temp_path = tmp_file.name
 
         print("Saved path", self.temp_path)
-        print(type(selfModuleNotFoundError: This app has encountered an error. The original error message is redacted to prevent data leaks. Full error details have been recorded in the logs (if you're on Streamlit Cloud, click on 'Manage app' in the lower right of your app).
-Traceback:
-File "/mount/src/rag_chatapp/main.py", line 14, in <module>
-    from langchain_groq import ChatGroq.temp_path))
+        
         # st.success(f"File uploaded and saved at {self.temp_path}")
         
         
@@ -236,10 +230,6 @@ File "/mount/src/rag_chatapp/main.py", line 14, in <module>
 
     def embedding(self):
         
-        print("EmbeddinModuleNotFoundError: This app has encountered an error. The original error message is redacted to prevent data leaks. Full error details have been recorded in the logs (if you're on Streamlit Cloud, click on 'Manage app' in the lower right of your app).
-Traceback:
-File "/mount/src/rag_chatapp/main.py", line 14, in <module>
-    from langchain_groq import ChatGroqg chunks...")
         embedding_model = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2",
             model_kwargs={"device": "cpu"})
@@ -266,16 +256,7 @@ File "/mount/src/rag_chatapp/main.py", line 14, in <module>
        
         
             
-    # def chat_model(self):
-    #     print("Initializing chat model...")
-    #     self.model = ChatGroq(
-    #         api_key=groq_api_key,
-    #         model="openai/gpt-oss-120b",
-    #         temperature=0.7
-    #     )
-    #     print("Chat model initialized")
-
-    
+     
     
     
     def retrieval_qa(self):
