@@ -91,8 +91,8 @@ if "chat_history" not in st.session_state:
 if "llm" not in st.session_state:
     st.session_state.llm = ChatGroq(
         api_key=groq_api_key,
-        model="deepseek-r1-distill-llama-70b",
-        temperature=0.7
+        model="openai/gpt-oss-120b",
+        temperature=0.3
     )    
 
  
