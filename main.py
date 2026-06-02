@@ -13,6 +13,8 @@ import streamlit as st
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 
+
+
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyMuPDFLoader
 # from langchain_pymupdf4llm import PyMuPDF4LLMLoader
@@ -63,7 +65,11 @@ st.title("Smart FAQ Chatbot")
 
 
 load_dotenv()
-groq_api_key = os.getenv("GROQ_API_KEY")
+
+if "GROQ_API_KEY" in st.secrets:
+    groq_api_key = st.secrets["GROQ_API_KEY"]
+else:
+    groq_api_key = os.getenv("GROQ_API_KEY")
 
 if not groq_api_key:
     st.error("GROQ_API_KEY not found.")
@@ -193,7 +199,10 @@ class DocLoader:
             self.temp_path = tmp_file.name
 
         print("Saved path", self.temp_path)
-        print(type(self.temp_path))
+        print(type(selfModuleNotFoundError: This app has encountered an error. The original error message is redacted to prevent data leaks. Full error details have been recorded in the logs (if you're on Streamlit Cloud, click on 'Manage app' in the lower right of your app).
+Traceback:
+File "/mount/src/rag_chatapp/main.py", line 14, in <module>
+    from langchain_groq import ChatGroq.temp_path))
         # st.success(f"File uploaded and saved at {self.temp_path}")
         
         
@@ -227,7 +236,10 @@ class DocLoader:
 
     def embedding(self):
         
-        print("Embedding chunks...")
+        print("EmbeddinModuleNotFoundError: This app has encountered an error. The original error message is redacted to prevent data leaks. Full error details have been recorded in the logs (if you're on Streamlit Cloud, click on 'Manage app' in the lower right of your app).
+Traceback:
+File "/mount/src/rag_chatapp/main.py", line 14, in <module>
+    from langchain_groq import ChatGroqg chunks...")
         embedding_model = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2",
             model_kwargs={"device": "cpu"})

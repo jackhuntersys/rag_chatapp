@@ -154,7 +154,6 @@ activemq-data/
 
 # Chroma Vector Database
 chroma_db/
-
 *.chroma
 
 # Or if your folder is named "db"
