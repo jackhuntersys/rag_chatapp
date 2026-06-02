@@ -59,8 +59,8 @@ transformers_logging.set_verbosity_error()
 
 # ----------------------------------------------------------------------------------------
 
-st.set_page_config(page_title="Smart FAQ Chatbot", page_icon="", layout="centered")
-st.title("Smart FAQ Chatbot")
+st.set_page_config(page_title="Smart RAG Chatbot", page_icon="", layout="centered")
+st.title("Smart RAG Chatbot")
 
 
 
@@ -111,7 +111,7 @@ class DocLoader:
        
         # File uploader form
         with st.form("upload"):
-            self.uploaded_file = st.file_uploader(label = " Upload your document Allowed only: PDF, DOCX, TXT", )
+            self.uploaded_file = st.file_uploader(label = " Upload your document.    Allowed only: PDF, DOCX, TXT", )
             submitted = st.form_submit_button("Submit")
             
             if submitted:
